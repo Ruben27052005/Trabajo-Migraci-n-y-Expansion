@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="https://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Entidad</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<h1>Editar Entidad</h1>
+<form action="/guardar" method="POST">
+    <input type="hidden" name="id" th:value="${entidad.id}">
+    <label for="nombre">Nombre:</label>
+    <!-- Utilizamos Thymeleaf para poblar el valor del campo con el nombre de la entidad -->
+    <input type="text" id="nombre" name="nombre" th:value="${entidad.nombre}">
+    <label for="descripcion">Descripción:</label>
+    <!-- Utilizamos Thymeleaf para poblar el valor del campo con la descripción de la entidad -->
+    <textarea id="descripcion" name="descripcion" th:text="${entidad.descripcion}">Descripción de ejemplo</textarea>
+    <button type="submit">Guardar</button>
+</form>
+</body>
+</html>

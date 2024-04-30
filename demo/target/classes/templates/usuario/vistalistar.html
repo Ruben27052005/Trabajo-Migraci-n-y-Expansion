@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listar Entidades</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<h1>Listar Entidades</h1>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Descripción</th>
+        <th>Acciones</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Iteramos sobre la lista de entidades -->
+    <!-- Suponiendo que cada entidad tiene un id, nombre y descripción -->
+    <!-- Usamos Thymeleaf para iterar sobre la lista de entidades -->
+    <tr th:each="entidad : ${entidades}">
+        <td th:text="${entidad.id}">1</td>
+        <td th:text="${entidad.nombre}">Ejemplo</td>
+        <td th:text="${entidad.descripcion}">Descripción de ejemplo</td>
+        <td>
+            <a th:href="@{/editar/{id}(id=${entidad.id})}">Editar</a> |
+            <a th:href="@{/eliminar/{id}(id=${entidad.id})}">Eliminar</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
